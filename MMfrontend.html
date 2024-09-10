@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Emission Tracker</title>
+    <link rel="stylesheet" href="MMfrontend.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <h1>arbon Footprint Quantification for Indian Coal Mines</h1>
+            <p>A tool to estimate and reduce carbon emissions towards carbon neutrality</p>
+        </header>
+
+        <!-- Authentication Section -->
+        <section id="auth-section">
+            <form id="login-form">
+                <h2>Login</h2>
+                <label for="login-username">Username</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Login</button>
+                <button type="button" id="show-register-form">Register</button>
+            </form>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register-section">
+            <form id="register-form">
+                <h2>Register</h2>
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" required>
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" required>
+                <button type="submit">Register</button>
+                <button type="button" id="cancel-registration">Cancel</button>
+            </form>
+        </section>
+
+        <!-- Application Content -->
+        <section id="app-content">
+            <h2>Welcome to Carbon Emission Tracker</h2>
+
+            <!-- Carbon Emission Form -->
+            <form id="emission-form">
+                <label for="excavation-amount">Excavation Amount (tons):</label>
+                <input type="number" id="excavation-amount" required>
+                <label for="transportation-distance">Transportation Distance (km):</label>
+                <input type="number" id="transportation-distance" required>
+                <label for="equipment-usage">Equipment Usage (hours):</label>
+                <input type="number" id="equipment-usage" required>
+                <button type="button" id="calculate-btn">Calculate Emissions</button>
+            </form>
+
+            <p>Total Emissions: <span id="total-emissions">0</span> tons CO₂</p>
+
+            <canvas id="emissionChart"></canvas>
+
+            <!-- Suggestions -->
+            <div id="suggestions"></div>
+
+            <!-- Progress Chart -->
+            <h3>Emission Progress</h3>
+            <canvas id="progressChart"></canvas>
+
+            <!-- Carbon Offset Calculation -->
+            <form id="offset-form">
+                <label for="trees-planted">Trees Planted:</label>
+                <input type="number" id="trees-planted" required>
+                <button type="button" id="offset-calculate-btn">Calculate Offset</button>
+            </form>
+            <p>Carbon Offset: <span id="carbon-offset">0</span> tons CO₂</p>
+
+            <!-- Cleaner Technologies -->
+            <form id="cleaner-tech-form">
+                <label for="machinery-type">Select Machinery Type:</label>
+                <select id="machinery-type" required>
+                    <option value="electric">Electric</option>
+                    <option value="diesel">Diesel</option>
+                </select>
+                <button type="submit">Calculate Reduction</button>
+            </form>
+            <p id="cleaner-tech-result"></p>
+
+            <!-- Afforestation Form -->
+            <form id="afforestation-form">
+                <label for="land-size">Land Size (acres):</label>
+                <input type="number" id="land-size" required>
+                <button type="submit">Calculate Sequestration</button>
+            </form>
+            <p id="afforestation-result"></p>
+
+            <!-- Renewable Energy Form -->
+            <form id="renewable-energy-form">
+                <label for="energy-source">Select Energy Source:</label>
+                <select id="energy-source" required>
+                    <option value="solar">Solar</option>
+                    <option value="wind">Wind</option>
+                    <option value="hydro">Hydropower</option>
+                </select>
+                <button type="submit">Calculate Savings</button>
+            </form>
+            <p id="renewable-energy-result"></p>
+
+            <!-- Logout -->
+            <button id="logout-btn">Logout</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Carbon Emission Tracker</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="MMfrontend.js"></script>
+</body>
+</html>
